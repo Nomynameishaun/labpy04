@@ -18,24 +18,26 @@ while True:
     print("Nilai UAS :", end=" ")
     nilai_uas = int(input())
     
-    # Hitung nilai akhir
+    # Menghitung nilai akhir
     nilai_akhir = hitung_nilai_akhir(nilai_tugas, nilai_uts, nilai_uas)
     
     # Simpan data ke list
     data_mahasiswa.append([no, nama, nim, nilai_tugas, nilai_uts, nilai_uas, nilai_akhir])
     no += 1
     
+    # Tambah lagi atau tidak?
     print("Tambah data(y/t)?", end=" ")
     lanjut = input().lower()
     if lanjut != 'y':
         break
 
+# Tampilan ditampilkan dalam bentuk tabel
 # Cetak header tabel
 print("="*61)
 print("| No | Nama      | NIM   | Tugas | UTS | UAS | Akhir |")
 print("="*61)
 
-# Cetak setiap data mahasiswa
+# Cetak setiap data yang diinputkan
 for data in data_mahasiswa:
     print(f"| {data[0]:<2} | {data[1]:<9} | {data[2]:<5} | {data[3]:<5} | {data[4]:<3} | {data[5]:<3} | {data[6]:<5} |")
 
